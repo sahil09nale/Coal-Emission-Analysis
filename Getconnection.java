@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class Getconnection {
-	private static Properties properties = new Properties();
+	private static Properties dbProperties = new Properties();
 
 	// load the database URL, username, and password into the properties object
 	static {
@@ -23,8 +23,9 @@ public class Getconnection {
 	public static Connection getConnection() throws SQLException
 	{
 		return DriverManager.getConnection(
-			properties.getProperty("db.url"), 
-			properties.getProperty("db.username"), properties.getProperty("db.password"));
+			dbProperties.getProperty("db.url"), 
+			dbProperties.getProperty("db.username"), 
+			dbProperties.getProperty("db.password"));
 		
 	}
 
